@@ -73,9 +73,6 @@ A: Press q in the window displaying the webcam.
 Q: What if I see “Error loading face cascade”?
 A: Make sure haarcascade_frontalface_default.xml is accessible via OpenCV's cv2.data.haarcascades.
 
-📄 License
-MIT License. Free to use and modify.
-
 ✍️ Author
 Vishnu Priya
 
