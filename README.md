@@ -1,78 +1,91 @@
-🧠 Real-Time Face Detection with OpenCV
-This project uses OpenCV and Haar Cascade to detect human faces from webcam input in real-time.
 
-📸 Preview
-✅ The webcam opens and detects faces, drawing green rectangles around them.
-❌ Press q to exit the window.
+# 🧠 Real-Time Face Detection using OpenCV
 
-📂 Project Structure
-bash
-Copy
-Edit
+This project uses **Python** and **OpenCV** to perform real-time face detection through a webcam. It uses Haar Cascade, a pre-trained classifier provided by OpenCV, to identify faces in each video frame and draws rectangles around them.
+
+---
+
+## 📸 Preview
+
+- Real-time face detection using your webcam
+- Green rectangles highlight detected faces
+- Press **`q`** to exit the webcam window
+
+---
+
+## 📂 Project Structure
+
+```
+
 face-detection/
 │
-├── face_detection.py        # Your main detection script
-├── README.md                # Project info
-🛠️ Technologies Used
-Python 3.x
+├── face\_detection.py        # Main Python script for detection
+├── README.md                # Project documentation
 
-OpenCV (cv2)
+````
 
-Haar Cascade (Pre-trained classifier)
+---
 
-🔧 Setup Instructions
-1. Clone the Repository
-bash
-Copy
-Edit
+## 🛠️ Technologies Used
+
+- Python 3.x
+- OpenCV (cv2)
+- Haar Cascade Classifier
+
+---
+
+## 🔧 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/your-username/face-detection.git
 cd face-detection
-2. Install Dependencies
-bash
-Copy
-Edit
+````
+
+### 2. Install Dependencies
+
+```bash
 pip install opencv-python
-3. Run the App
-bash
-Copy
-Edit
+```
+
+### 3. Run the App
+
+```bash
 python face_detection.py
-✅ Make sure your webcam is connected and accessible.
+```
 
-💡 How It Works
-Loads the pre-trained Haar Cascade face detection model.
+> ✅ Make sure your webcam is connected and not used by another application.
 
-Captures live frames from the webcam.
+---
 
-Converts the frame to grayscale.
+## 💡 How It Works
 
-Detects faces using detectMultiScale().
+1. Loads Haar Cascade face detection model from OpenCV.
+2. Captures frames from your webcam.
+3. Converts each frame to grayscale.
+4. Detects faces using `detectMultiScale()`.
+5. Draws green rectangles around detected faces.
+6. Displays the annotated frame.
 
-Draws green rectangles around detected faces.
+---
 
-Displays output in a window.
+## 🔍 Sample Code Snippet
 
-🧠 Algorithm Used
-Haar Cascade Classifier from OpenCV:
-
-Detects features in grayscale images.
-
-Parameters like scaleFactor and minNeighbors help control accuracy and performance.
-
-🖼️ Sample Code Highlights
-python
-Copy
-Edit
+```python
 faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
 for (x, y, w, h) in faces:
     cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-❓ FAQ
-Q: How do I stop the program?
-A: Press q in the window displaying the webcam.
+```
 
-Q: What if I see “Error loading face cascade”?
-A: Make sure haarcascade_frontalface_default.xml is accessible via OpenCV's cv2.data.haarcascades.
+---
 
-✍️ Author
-Vishnu Priya
+## ❓ FAQ
+
+* **Q:** How do I stop the program?
+
+  * **A:** Press `q` on the keyboard in the video window.
+* **Q:** What if I get an error loading the cascade?
+
+  * **A:** Ensure OpenCV is correctly installed and has access to `haarcascade_frontalface_default.xml` via `cv2.data.haarcascades`.
 
